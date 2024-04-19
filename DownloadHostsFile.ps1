@@ -1,1 +1,1 @@
-invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/VariousBatchFiles/main/hosts -OutFile D:\Documents\hosts
+invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/VariousBatchFiles/main/hosts -OutFile D:\hosts
