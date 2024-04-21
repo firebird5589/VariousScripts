@@ -1,5 +1,5 @@
 #Download iCAM reg file from my github repo and save to D:\Documents folder
-Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/4drxyyxrntoqb6fdgqhe2/ApplyingiCAMAdverts.reg?rlkey=murlhu8452v0l29i34qvjvdlu&st=fqmivlpc&dl=0" -OutFile D:\Documents\ApplyingiCAMAdverts.reg -UseBasicParsing
+Invoke-RestMethod -Uri "https://www.dropbox.com/scl/fi/4drxyyxrntoqb6fdgqhe2/ApplyingiCAMAdverts.reg?rlkey=murlhu8452v0l29i34qvjvdlu&st=fqmivlpc&dl=0" -OutFile D:\Documents\ApplyingiCAMAdverts.reg
 
 #Applying .reg file that sets the Adverts profile in iCAMConfig
 regedit D:\Documents\ApplyingiCAMAdverts.reg
