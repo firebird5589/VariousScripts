@@ -3,7 +3,7 @@ $url = "https://github.com/firebird5589/Files/archive/refs/heads/main.zip"
 # Specify the download location
 $downloadLocation = "D:\Documents\main.zip"
 # Specify the extraction location
-$extractLocation = "D:\Documents"
+$extractLocation = "D:\Documents\"
 # Specify the desktop location
 $desktopLocation = "C:\Users\User\Desktop\"
 
@@ -14,7 +14,7 @@ Invoke-WebRequest -Uri $url -OutFile $downloadLocation
 Expand-Archive -Path $downloadLocation -DestinationPath $extractLocation
 
 # Get the name of the extracted folder
-$extractedContents = Get-ChildItem -Path $extractLocation
+$extractedContents = Get-ChildItem -Path $extractLocation\Files-main\
 
 # Move the extracted folder to the desktop
 $extractedContents | ForEach-Object {
