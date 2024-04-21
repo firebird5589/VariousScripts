@@ -1,5 +1,5 @@
 #Download iCAM reg file from my github repo and save to D:\Documents folder
-Set-Variable ProgressPreference SilentlyContinue ; invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/RegFiles/main/ApplyingiCAMAdverts.reg -OutFile D:\Documents\ApplyingiCAMAdverts.reg
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/RegFiles/main/ApplyingiCAMAdverts.reg -OutFile D:\Documents\ApplyingiCAMAdverts.reg -UseBasicParsing
 
 #Applying .reg file that sets the Adverts profile in iCAMConfig
 regedit D:\Documents\ApplyingiCAMAdverts.reg
