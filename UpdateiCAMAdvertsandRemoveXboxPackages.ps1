@@ -4,13 +4,13 @@ invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/RegFiles/m
 #Applying .reg file that sets the Adverts profile in iCAMConfig
 regedit D:\Documents\ApplyingiCAMAdverts.reg
 
-#Search for all packages with the Name "xbox" and removes them
+#Search for packages with the Name "xbox" and removes them
 dism /Online /Get-ProvisionedAppxPackages | `Select-String PackageName | `Select-String xbox | `ForEach-Object {$_.Line.Split(':')[1].Trim()} | `ForEach-Object { dism /Online /Remove-ProvisionedAppxPackage /PackageName:$_}
 
 #5 seconds pause
 Start-Sleep -Seconds 5
 
-#Search for packages with the name "xbox" and removes them
+#Search for packages with the name "xbox" and removes for all users accounts
 Get-ProvisionedAppxPackage -Online | `Where-Object { $_.PackageName -match "xbox"} | `ForEach-Object { Remove-ProvisionedAppxPackage -Online -AllUsers -PackageName $} 
 
 #5 seconds pause
