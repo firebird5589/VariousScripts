@@ -2,7 +2,7 @@
 Invoke-RestMethod -Uri "https://www.dropbox.com/scl/fi/4drxyyxrntoqb6fdgqhe2/ApplyingiCAMAdverts.reg?rlkey=murlhu8452v0l29i34qvjvdlu&st=fqmivlpc&dl=0" -OutFile D:\Documents\ApplyingiCAMAdverts.reg
 
 #Applying .reg file that sets the Adverts profile in iCAMConfig
-regedit D:\Documents\ApplyingiCAMAdverts.reg
+Start-Process -filepath "C:\windows\regedit.exe" -argumentlist "/s D:\Documents\ApplyingiCAMAdverts.reg"
 
 #Search for packages with the Name "xbox" and removes them
 dism /Online /Get-ProvisionedAppxPackages | `Select-String PackageName | `Select-String xbox | `ForEach-Object {$_.Line.Split(':')[1].Trim()} | `ForEach-Object { dism /Online /Remove-ProvisionedAppxPackage /PackageName:$_}
