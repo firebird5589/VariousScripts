@@ -14,9 +14,10 @@ Invoke-WebRequest -Uri $url -OutFile $downloadLocation
 Expand-Archive -Path $downloadLocation -DestinationPath $extractLocation
 
 # Get the name of the extracted folder
-$extractedFolder = Get-ChildItem -Path $extractLocation\Files-Main | Where-Object { $_.PSIsContainer } | Select-Object -First 1
+$extractedContents = Get-ChildItem -Path $extractLocation
 
 # Move the extracted folder to the desktop
-Move-Item -Path $extractedFolder.FullName -Destination $desktopLocation
-
+$extractedContents | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination $desktopLocation
+}
 cmd.exe /c "C:\Users\User\Desktop\Restore_Local_Group_Policy.vbs" /NoLogo /B
