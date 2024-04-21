@@ -1,8 +1,5 @@
-#Prevent "Win32 internal error "Access is denied" 0x5 occurred while reading the console output buffer" from triggering when the next command is run
-$ProgressPreference = "SilentlyContinue"
-
 #Download iCAM reg file from my github repo and save to D:\Documents folder
-invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/RegFiles/main/ApplyingiCAMAdverts.reg -OutFile D:\Documents\ApplyingiCAMAdverts.reg
+Set-Variable ProgressPreference SilentlyContinue ; invoke-WebRequest -Uri https://raw.githubusercontent.com/firebird5589/RegFiles/main/ApplyingiCAMAdverts.reg -OutFile D:\Documents\ApplyingiCAMAdverts.reg
 
 #Applying .reg file that sets the Adverts profile in iCAMConfig
 regedit D:\Documents\ApplyingiCAMAdverts.reg
