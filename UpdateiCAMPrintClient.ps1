@@ -8,7 +8,7 @@ Remove-Printer -Name "iCAM Printer"
 Remove-Printer -Name "iCAM Printer (Copy 1)"
 
 #Install iCAM Print Client V5.0.1.0
-msiexec /i "D:\Downloads\iCAM_Print_Client_5.0.1.0.msi" /Passive
+Start-Process msiexec.exe -Wait -ArgumentList '/I D:\Downloads\iCAM_Print_Client_5.0.1.0.msi /quiet'
 
 #Delete iCAM Printer Control v5.0.1.0 from D:\Downloads folder
 Remove-Item -path D:\Downloads\iCAM_Print_Client_5.0.1.0.msi
