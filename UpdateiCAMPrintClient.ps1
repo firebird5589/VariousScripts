@@ -14,4 +14,4 @@ Start-Process msiexec.exe -Wait -ArgumentList '/I D:\Downloads\iCAM_Print_Client
 Remove-Item -path D:\Downloads\iCAM_Print_Client_5.0.1.0.msi
 
 #Restart PC (Just to make sure everything applies correctly after install - MSI installer does not action this by default)
-Restart-Computer
+Restart-Computer -Force
