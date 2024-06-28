@@ -2,6 +2,6 @@ Set-Variable ProgressPreference SilentlyContinue ; Invoke-RestMethod -Uri "https
 
 Start-Process -filepath "C:\windows\regedit.exe" -argumentlist "/s D:\Documents\DisableWebcam.reg"
 
-Remove-Item -path D:\Documents\ApplyingiCAMAdverts.reg
+Remove-Item -path D:\Documents\DisableWebcam.reg
 
 Restart-Computer -Force
