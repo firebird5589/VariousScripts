@@ -4,4 +4,4 @@ Start-Process -filepath "C:\windows\regedit.exe" -argumentlist "/s D:\Documents\
 
 Remove-Item -path D:\Documents\DisableWebcam.reg
 
-Restart-Computer -Force
+#Restart-Computer -Force
