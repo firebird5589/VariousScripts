@@ -9,7 +9,7 @@ First attempt:
 #Start-Process -filepath "C:\windows\regedit.exe" -argumentlist "/s D:\Documents\DisableWebcam.reg"
 
 #Removes the DisableWebcam.reg file from D:\Documents\
-Remove-Item -path D:\Documents\DisableWebcam.reg
+#Remove-Item -path D:\Documents\DisableWebcam.reg
 
 #Restarts the PC
-Restart-Computer -Force
+#Restart-Computer -Force
